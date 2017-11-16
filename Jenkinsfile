@@ -10,7 +10,7 @@ node() {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("manee2k6/explore:${env.BUILD_NUMBER}")
+        app = docker.build("manee2k6/dplinetech:${env.BUILD_NUMBER}")
         
     }
 
@@ -29,7 +29,8 @@ node() {
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
         withDockerRegistry([credentialsId: 'docker-hub-credential', url: 'https://hub.docker.com/']) {
-           app.push("${env.BUILD_NUMBER}") 
+           //app.push("${env.BUILD_NUMBER}") 
+            app.push("manee2k6/dplinetech:${env.BUILD_NUMBER}")
          }
     }
 }
