@@ -9,8 +9,7 @@ node() {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
-        app = docker.build("manee2k6/fidelitee:${env.BUILD_NUMBER}")
+       sh 'docker build --tag mani .        
         
     }
 
