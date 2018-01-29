@@ -1,11 +1,11 @@
 pipeline {
     agent {
-        docker { image '' }
+        docker { image 'python:2.7-slim' }
     }
     stages {
-        stage('Test') {
+        stage('checkout') {
             steps {
-                sh 'node --version'
+              git credentialsId: 'GithubID', url: 'https://github.com/fidelitee/python-app.git'  
             }
         }
     }
