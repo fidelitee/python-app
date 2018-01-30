@@ -1,4 +1,4 @@
-node("docker") {
+node() {
     docker.withRegistry('https://hub.docker.com/', 'DockerID') {
     
         git url: "https://github.com/fidelitee/python-app.git", credentialsId: 'GithubID'
