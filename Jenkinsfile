@@ -11,7 +11,7 @@ node() {
         def app = docker.build "manee2k6/padmavathy:008"
     
         stage "publish"
-        app.push 'master'
-        app.push "${commit_id}"
+        app.push 
+        //app.push "${commit_id}"
     }
 }
